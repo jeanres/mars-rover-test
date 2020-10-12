@@ -11,7 +11,7 @@ class Rover
     @direction = direction
   end
 
-  def print_location
+  def get_current_location
     "#{@x} #{@y} #{@direction}"
   end
 

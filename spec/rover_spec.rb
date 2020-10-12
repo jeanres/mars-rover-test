@@ -30,25 +30,25 @@ describe Rover do
     it "returns the correct position based on the input parameters (right)" do
       rover = Rover.new(@grid, 3,3, "E")
       rover.instruct("MMRMMRMRRM")
-      expect(rover.print_location).to eq('5 1 E')
+      expect(rover.get_current_location).to eq('5 1 E')
     end
 
     it "returns the correct position based on the input parameters (left)" do
       rover = Rover.new(@grid, 1, 2, "N")
       rover.instruct('LMLMLMLMM')
-      expect(rover.print_location).to eq('1 3 N')
+      expect(rover.get_current_location).to eq('1 3 N')
     end
 
     it "shoulkd return the previous x coordinate when going out of the grid" do
       rover = Rover.new(@grid, 5, 5, "N")
       rover.instruct("RM")
-      expect(rover.print_location).to eq("5 5 E")
+      expect(rover.get_current_location).to eq("5 5 E")
     end
 
     it "shoulkd return the previous y coordinate when going out of the grid" do
       rover = Rover.new(@grid, 5, 5, "N")
       rover.instruct("M")
-      expect(rover.print_location).to eq("5 5 N")
+      expect(rover.get_current_location).to eq("5 5 N")
     end
   end
 
@@ -70,13 +70,13 @@ describe Rover do
     it "should return the correct coordinates when moving on the y axis" do
       rover = Rover.new(@grid, 3,3, "N")
       rover.move()
-      expect(rover.print_location).to eq("3 4 N")
+      expect(rover.get_current_location).to eq("3 4 N")
     end
 
     it "should return the correct coordinates when moving on the x axis" do
       rover = Rover.new(@grid, 3,3, "E")
       rover.move()
-      expect(rover.print_location).to eq("4 3 E")
+      expect(rover.get_current_location).to eq("4 3 E")
     end
   end
 end

@@ -11,7 +11,7 @@ class Main
       x, y, direction = lines[0].split
       rover = Rover.new(@grid, x, y, direction)
       rover.instruct(lines[1].strip)
-      puts rover.print_location
+      puts rover.get_current_location()
     end
   end
 end
