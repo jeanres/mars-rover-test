@@ -2,7 +2,7 @@ require "spec_helper"
 require_relative "../lib/grid"
 
 describe Grid do
-  it "should return an array of the top most coordinates" do
+  it "should have the correct top most coordinates" do
     grid = Grid.new(5,5)
 
     expect(grid.get_top_right_x).to eq(5)
